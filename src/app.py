@@ -74,6 +74,7 @@ app = dash.Dash(__name__,
         'https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css'
     ],
     title='Sales Dashboard')
+server = app.server  # Expose the server variable for deployment
 
 # ── Layout ─────────────────────────────────────────────────────
 app.layout = dbc.Container([
@@ -153,4 +154,4 @@ def update_dashboard(regions, categories, start_date, end_date):
            make_category_bar(f), make_top_customers(f), td.to_dict('records')
 
 if __name__ == '__main__':
-    app.run(debug=True)   # debug=True enables hot reload
+    app.run_server(debug=True)   # debug=True enables hot reload
