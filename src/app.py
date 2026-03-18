@@ -154,4 +154,4 @@ def update_dashboard(regions, categories, start_date, end_date):
            make_category_bar(f), make_top_customers(f), td.to_dict('records')
 
 if __name__ == '__main__':
-    app.run_server(debug=True)   # debug=True enables hot reload
+    app.run(debug=True)   # debug=True enables hot reload
